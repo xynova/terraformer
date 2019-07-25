@@ -6,6 +6,11 @@ echo "!> Preping build image"
 docker build -f Dockerfile.builder -t local/terraformer-builder .
 
 echo "---"
+echo "!> Ensure build dir"
+mkdir -Force generated
+
+
+echo "---"
 echo "!> Building code"
 docker run  `
 -v ${PWD}/generated:/generated `
